@@ -1,12 +1,16 @@
 import './categories.styles.scss'
+import CategoryContainer from "../category-container/category-container";
 
 const CategoriesContainer = (props) => {
     const {
-        categoriesStyling
+        categoriesStyling,
+        categories
     } = props
     return(
         <div className={categoriesStyling}>
-            {props.children}
+            {categories.map(({title, id,imageUrl}) => (
+                <CategoryContainer key={id} cardTitle={title} cardImage={imageUrl} cardLink='Shop Now'/>
+            ))}
         </div>
     )
 }

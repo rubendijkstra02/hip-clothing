@@ -1,4 +1,3 @@
-import CategoryContainer from "./components/category-container/category-container";
 import CategoriesContainer from "./components/categories-container/categories-container";
 
 const App = () => {
@@ -31,11 +30,7 @@ const App = () => {
     ]
 
     return (
-        <CategoriesContainer categoriesStyling='categories-container'>
-            {categories.map(({title, id,imageUrl}) => (
-                <CategoryContainer key={id} cardTitle={title} cardImage={imageUrl} cardLink='Shop Now'/>
-            ))}
-        </CategoriesContainer>
+        <CategoriesContainer categories={categories} categoriesStyling='categories-container'/>
     )
 }
 
